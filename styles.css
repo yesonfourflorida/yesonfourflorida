@@ -1,0 +1,520 @@
+/* Define primary and secondary colors */
+:root {
+    --primary-color: #267d03;
+    --secondary-color: #0a5711;
+    --tertiary-color: #1f50ff;
+    --tert-grad: #2f71c8;
+    --header-font-color: #f7f9de;
+    --off-white: #eef2e9;
+    --off-black: #393939;
+    --font-regular: "Nunito Sans", sans-serif;
+    --bg-start: #e8e8e8;
+    --bg-end: #dae6d1;
+    --bg: #fef9ec;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-regular);
+    margin: 0;
+    background: var(--bg);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 100vw;
+}
+
+main {
+    margin-left: 220px;
+    width: 80vw;
+    max-width: 1000px;
+    padding: 2em;
+    text-align: left;
+}
+
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    padding: 5px 20px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 1rem;
+}
+
+.sidebar ul li a {
+    color: var(--header-font-color);
+    border-radius: 4px;
+    padding: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sidebar ul li a:hover {
+    transition: .3s;
+    box-shadow: 0 0 3pt 2pt white;
+}
+
+.title-card {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: var(--header-font-color);
+    padding: 1em;
+    border-radius: 10px;
+    width: 100%;
+    margin: 0 auto 2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    color: var(--off-black);
+}
+
+h1 {
+    color: white;
+    font-size: 4em;
+    font-weight: 900;
+}
+
+h2 {
+    margin-top: 1em;
+    margin-bottom: 0.1em;
+}
+
+h3 {
+    color: white;
+    font-size: 2.5em;
+    margin-bottom: 0;
+}
+
+.subh3,
+.mainh3 {
+    font-size: 2.5em;
+    font-weight: 500;
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+    text-align: center;
+}
+
+.subh3 {
+    font-style: italic;
+    color: var(--header-font-color);
+}
+
+.mainh3 {
+    font-weight: 900;
+    color: var(--header-font-color);
+}
+
+p {
+    margin: 0;
+    color: var(--off-black);
+    font-size: medium;
+}
+
+strong {
+    font-weight: 900;
+}
+
+.whitep,
+.headp {
+    text-align: center;
+    font-weight: 500;
+    font-size: 2em;
+    color: var(--off-black);
+}
+
+.whitep {
+    color: var(--off-white);
+}
+
+.subp {
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.5em;
+    color: var(--off-black);
+}
+
+.cardholder {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    flex: 1 1 300px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1em;
+    margin: 1em auto;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    background: linear-gradient(45deg, var(--tertiary-color), var(--tert-grad));
+    color: var(--header-font-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 2em 1em;
+    padding: 0.5em;
+    font-size: 1em;
+}
+
+button:hover {
+    box-shadow: 4px 8px 4px rgba(1, 1, 1, 0.1) inset,
+        -4px -8px 4px rgba(255, 255, 255, 0.1) inset;
+}
+
+
+.nunito-title,
+.noto-sub,
+.noto-info,
+.title-text {
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.title-text {
+    font-size: 6em;
+    font-stretch: narrower;
+    color: var(--header-font-color);
+    font-weight: 900;
+}
+
+.source {
+    color: var(--tertiary-color);
+}
+
+@media (max-width: 1000px) {
+    .title-card {
+        width: 90%;
+    }
+
+    .title-text {
+        font-stretch: narrower;
+        color: var(--header-font-color);
+        font-weight: 900;
+        font-size: 3em;
+    }
+
+    .mainh3 {
+        font-size: 1.5em;
+    }
+
+    .subh3 {
+        font-size: 1.5em;
+    }
+
+
+    .sidebar {
+        position: fixed;
+        width: 100vw;
+        height: 105px;
+        margin: 0 0;
+        padding: 0px 0px;
+        border-radius: 0;
+    }
+
+    main {
+        margin-left: 0;
+        width: 95%;
+        padding: 2em 1em;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .sidebar ul li {
+        flex: 1 1 30%;
+        margin: 0px;
+        padding-bottom: 2px;
+        font-size: x-small;
+    }
+
+    .sidebar ul li a {
+        border-radius: 3px;
+    }
+
+    .primary-button {
+        font-size: small;
+    }
+
+    .title-card {
+        margin-top: 100px;
+    }
+
+    .img {
+        width: 90vw;
+    }
+
+}
+
+@media (max-width: 375px) {
+    .title-card {
+        width: 90%;
+    }
+
+    .title-text {
+        font-stretch: narrower;
+        color: var(--header-font-color);
+        font-weight: 900;
+        font-size: 2.5em;
+    }
+
+    .mainh3 {
+        font-size: 1.5em;
+    }
+
+    .subh3 {
+        font-size: 1.5em;
+    }
+
+
+    .sidebar {
+        position: fixed;
+        width: 100vw;
+        height: 100px;
+        margin: 0 0 0 0;
+        padding: 0 0 0;
+        border-radius: 0;
+    }
+
+    main {
+        margin-left: 0;
+        width: 95%;
+        padding: 2em 1em;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .sidebar ul li {
+        flex: 1 1 1 20%;
+        margin-left: 5px;
+        padding-bottom: 0px;
+        font-size: xx-small;
+        margin-bottom: 0.1rem;
+    }
+
+    .sidebar ul li a {
+        border-radius: 3px;
+        padding: 0px;
+    }
+
+    .primary-button {
+        font-size: small;
+    }
+
+    .title-card {
+        margin-top: 100px;
+    }
+
+    .img {
+        width: 90vw;
+    }
+
+}
+
+@media (max-width: 345px) {
+    sidebar {
+        height: 120px;
+    }
+}
+
+.graph {
+    width: 100vw;
+    height: 820px;
+    border: none;
+}
+
+a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+
+
+
+#amendment-txt:before {
+    content: "";
+    display: block;
+    height: 100px;
+    /* Offset height */
+    margin-top: -100px;
+    /* Offset height (negative margin to move it up) */
+    visibility: hidden;
+    /* Hide the element */
+}
+
+#ban-txt:before {
+    content: "";
+    display: block;
+    height: 100px;
+    /* Offset height */
+    margin-top: -100px;
+    /* Offset height (negative margin to move it up) */
+    visibility: hidden;
+    /* Hide the element */
+}
+
+#doctors:before {
+    content: "";
+    display: block;
+    height: 100px;
+    /* Offset height */
+    margin-top: -100px;
+    /* Offset height (negative margin to move it up) */
+    visibility: hidden;
+    /* Hide the element */
+}
+
+#access:before {
+    content: "";
+    display: block;
+    height: 100px;
+    /* Offset height */
+    margin-top: -100px;
+    /* Offset height (negative margin to move it up) */
+    visibility: hidden;
+    /* Hide the element */
+}
+
+#risks:before {
+    content: "";
+    display: block;
+    height: 100px;
+    /* Offset height */
+    margin-top: -100px;
+    /* Offset height (negative margin to move it up) */
+    visibility: hidden;
+    /* Hide the element */
+}
+
+#economics:before {
+    content: "";
+    display: block;
+    height: 100px;
+    /* Offset height */
+    margin-top: -100px;
+    /* Offset height (negative margin to move it up) */
+    visibility: hidden;
+    /* Hide the element */
+}
+
+#myth:before {
+    content: "";
+    display: block;
+    height: 100px;
+    /* Offset height */
+    margin-top: -100px;
+    /* Offset height (negative margin to move it up) */
+    visibility: hidden;
+    /* Hide the element */
+}
+
+#anomalies:before {
+    content: "";
+    display: block;
+    height: 100px;
+    /* Offset height */
+    margin-top: -100px;
+    /* Offset height (negative margin to move it up) */
+    visibility: hidden;
+    /* Hide the element */
+}
+
+#viable:before {
+    content: "";
+    display: block;
+    height: 100px;
+    /* Offset height */
+    margin-top: -100px;
+    /* Offset height (negative margin to move it up) */
+    visibility: hidden;
+    /* Hide the element */
+}
+
+#when:before {
+    content: "";
+    display: block;
+    height: 100px;
+    /* Offset height */
+    margin-top: -100px;
+    /* Offset height (negative margin to move it up) */
+    visibility: hidden;
+    /* Hide the element */
+}
+
+
+#later:before {
+    content: "";
+    display: block;
+    height: 100px;
+    /* Offset height */
+    margin-top: -100px;
+    /* Offset height (negative margin to move it up) */
+    visibility: hidden;
+    /* Hide the element */
+}
+
+#religion:before {
+    content: "";
+    display: block;
+    height: 100px;
+    /* Offset height */
+    margin-top: -100px;
+    /* Offset height (negative margin to move it up) */
+    visibility: hidden;
+    /* Hide the element */
+}
+
+#life-begin:before {
+    content: "";
+    display: block;
+    height: 100px;
+    /* Offset height */
+    margin-top: -100px;
+    /* Offset height (negative margin to move it up) */
+    visibility: hidden;
+    /* Hide the element */
+}
